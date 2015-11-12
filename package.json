@@ -1,0 +1,30 @@
+{
+  "name": "Slite",
+  "version": "0.0.1",
+  "description": "Slite Desctop App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "packageMac": "node ./node_modules/electron-packager/cli.js . Slite --platform=darwin --arch=x64 --version=0.34.3 --icon=icons.icns  --overwrite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom/electron-quick-start.git"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atom/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/atom/electron-quick-start#readme",
+  "devDependencies": {
+    "electron-packager": "^5.1.1",
+    "electron-prebuilt": "^0.34.0"
+  }
+}
