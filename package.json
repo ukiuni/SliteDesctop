@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "packageMac": "node ./node_modules/electron-packager/cli.js . Slite --platform=darwin --arch=x64 --version=0.34.3 --icon=icons.icns  --overwrite"
+    "packageMac": "node ./node_modules/electron-packager/cli.js . Slite --platform=darwin --arch=x64 --version=0.34.3 --icon=icons.icns  --overwrite",
+    "packageWin": "node ./node_modules/electron-packager/cli.js . Slite --platform=win32 --arch=x64 --version=0.34.3 --icon=icons.icns  --overwrite"
   },
   "repository": {
     "type": "git",
