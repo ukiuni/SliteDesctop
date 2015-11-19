@@ -29,7 +29,9 @@ app.on('ready', function() {
 	// mainWindow.loadUrl('file://' + __dirname + '/index.html');
 	mainWindow.loadUrl(process.env.TARGET || 'https://slite.ukiuni.com');
 	// Open the DevTools.
-	mainWindow.webContents.openDevTools();
+	if(process.env.DEV){
+		mainWindow.webContents.openDevTools();
+	}
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function() {
 		// Dereference the window object, usually you would store windows
