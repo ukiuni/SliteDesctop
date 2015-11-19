@@ -5,10 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "packageMac": "node ./node_modules/electron-packager/cli.js . Slite --platform=darwin --arch=x64 --version=0.34.3 --icon=resources/icons.icns  --overwrite",
-    "packageWin": "node ./node_modules/electron-packager/cli.js . Slite --platform=win32 --arch=x64 --version=0.34.3 --icon=resources/icons.icns  --overwrite",
-    "zipMac": "zip -qry builds/Slite-darwin-x64.zip Slite-darwin-x64",
-    "zipWin": "zip -qry builds/Slite-win32-x64.zip Slite-win32-x64"
+    "packageMac": "rm -rf Slite-* & node ./node_modules/electron-packager/cli.js . Slite --platform=darwin --arch=x64 --version=0.34.3 --icon=resources/icons.icns --ignore=\"node_modules/(electron-packager|electron-prebuilt)|build|resources\" --overwrite",
+    "packageWin": "rm -rf Slite-* & node ./node_modules/electron-packager/cli.js . Slite --platform=win32 --arch=x64 --version=0.34.3 --icon=resources/icons.icns --ignore=\"node_modules/(electron-packager|electron-prebuilt)|build|resources\" --overwrite",
+    "zipMac": "zip -qry build/Slite-darwin-x64.zip Slite-darwin-x64",
+    "zipWin": "zip -qry build/Slite-win32-x64.zip Slite-win32-x64"
   },
   "repository": {
     "type": "git",
