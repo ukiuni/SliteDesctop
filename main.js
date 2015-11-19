@@ -21,16 +21,15 @@ app.on('ready', function() {
 	mainWindow = new BrowserWindow({
 		width : 800,
 		height : 600,
-		"node-integration" : false,
 		"web-preferences" : {
 			"web-security" : false
 		}
 	});
 	// and load the index.html of the app.
 	// mainWindow.loadUrl('file://' + __dirname + '/index.html');
-	mainWindow.loadUrl('https://slite.ukiuni.com');
+	mainWindow.loadUrl(process.env.TARGET || 'https://slite.ukiuni.com');
 	// Open the DevTools.
-	// mainWindow.webContents.openDevTools();
+	mainWindow.webContents.openDevTools();
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function() {
 		// Dereference the window object, usually you would store windows
