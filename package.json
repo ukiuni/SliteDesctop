@@ -10,7 +10,7 @@
     "packageWin32": "rm -rf Slite-* & node ./node_modules/electron-packager/cli.js . Slite --platform=win32 --arch=ia32 --version=0.34.3 --icon=resources/icons.icns --ignore=\"node_modules/(electron-packager|electron-prebuilt)|build|resources\" --overwrite",
     "zipMac": "zip -qry build/Slite-darwin-x64.zip Slite-darwin-x64",
     "zipWin": "zip -qry build/Slite-win32-x64.zip Slite-win32-x64",
-    "zipWin32": "zip -qry build/Slite-win32-ia32.zip Slite-win32-ia32"
+    "zipWin32": "zip -qry build/Slite-win32-ia32.zip Slite-win32-ia32",
     "buildAll": "npm run packageMac; npm run packageWin; npm run zipWin; npm run packageWin32; npm run zipWin32"
   },
   "repository": {
