@@ -1,6 +1,6 @@
 {
   "name": "Slite",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Slite Desctop App",
   "main": "main.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "zipMac": "zip -qry build/Slite-darwin-x64.zip Slite-darwin-x64",
     "zipWin": "zip -qry build/Slite-win32-x64.zip Slite-win32-x64",
     "zipWin32": "zip -qry build/Slite-win32-ia32.zip Slite-win32-ia32"
+    "buildAll": "npm run packageMac; npm run packageWin; npm run zipWin; npm run packageWin32; npm run zipWin32"
   },
   "repository": {
     "type": "git",
