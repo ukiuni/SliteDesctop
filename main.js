@@ -10,14 +10,18 @@ app.on('window-all-closed', function() {
 });
 app.on('ready', function() {
 	mainWindow = new BrowserWindow({
-		width : 800,
+		width : 1200,
 		height : 600,
+		title : "Slite",
 		"web-preferences" : {
 			"web-security" : false
 		}
 	});
 	// mainWindow.loadUrl('file://' + __dirname + '/index.html');
 	mainWindow.loadUrl(process.env.TARGET || 'https://slite.ukiuni.com');
+	mainWindow.webContents.on("did-fail-load", function() {
+		mainWindow.loadUrl('file://' + __dirname + '/index.html');
+	})
 	ipc.on("reload", function(event, arg) {
 		mainWindow.loadUrl(arg);
 	});

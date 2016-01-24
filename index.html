@@ -2,17 +2,47 @@
 <html>
 <head>
 <style>
-webview {
+body {
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+
+button {
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: solid 1px #CCC;
+	font-size: 20px;
+	font-family: sans-serif;
+	background-color: #FFF;
+	cursor: pointer;
+}
+
+button:HOVER {
+	background-color: #DDD;
+}
+
+#failArea {
+	margin: 10px 0;
+	color: red;
 }
 </style>
+<script type="text/javascript">
+	function reload(url) {
+		require("ipc").send("reload", url)
+	}
+</script>
 <title>Slite</title>
 </head>
 <body>
-	<webview id="mainWebview" src="https://slite.ukiuni.com/" autosize="on"></webview>
+	<div id="failArea">Fail to load. reload please.</div>
+	<div>
+		<button onclick="reload('https://slite.ukiuni.com')">Reload</button>
+	</div>
+
 </body>
 </html>
