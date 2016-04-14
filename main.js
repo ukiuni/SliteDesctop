@@ -17,6 +17,7 @@ app.on('ready', function() {
 			"web-security" : false
 		}
 	});
+	mainWindow.setTitle("Slite");
 	// mainWindow.loadUrl('file://' + __dirname + '/index.html');
 	mainWindow.loadUrl(process.env.TARGET || 'https://slite.ukiuni.com');
 	mainWindow.webContents.on("did-fail-load", function() {
