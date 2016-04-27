@@ -8,6 +8,11 @@ app.on('window-all-closed', function() {
 		app.quit();
 	}
 });
+if (/^win/.test(process.platform) && (process.env.HTTP_PROXY || process.env.http_proxy)) {
+	var randomPort = Math.floor(Math.random() * (65535 - 10000 + 1)) + 10000;
+	app.commandLine.appendSwitch('proxy-server', 'http://127.0.0.1:' + randomPort);
+	require("node-local-proxy").listen(randomPort, "127.0.0.1", process.env.HTTP_PROXY || process.env.http_proxy);
+}
 app.on('ready', function() {
 	mainWindow = new BrowserWindow({
 		width : 1200,
